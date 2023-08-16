@@ -28,11 +28,11 @@ public class ClientController {
     public ResponseEntity<List<Client>> getAllClient(){
         return ResponseEntity.ok(ClientRepository.findAll());
     }
-    @GetMapping("/person/{id}")
+    @GetMapping("person/{id}")
     public Client getClient(@PathVariable Long id){
         return this.getClientById(id);
     }
-    @PostMapping("/add-person")
+    @PostMapping("add-person")
     public Client createPerson(@RequestBody Client person) {
         // try {
         return ClientRepository.save(person);
